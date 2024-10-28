@@ -3,24 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>회원 가입 폼</title>
+    <title>과제</title>
   </head>
   <body>
-    <!-- 
-    div 태그는 반드시 body 태그 안에 존재
-    h1 태그처럼 제목태그는 div 바같에 존재해도 됨
-    -->
     <div>
-      <h1>회원가입 폼</h1>
+      <label>고객명 :</label>
+      <input type="text" name="clientName" />
+      <br /><br />
+      <label>전화번호 :</label>
+      <input type="text" name="clientPhone" />
+      <br /><br />
+      <label>Email :</label>
+      <input type="text" name="clientEmail" />
+      <br /><br />
+      <label>피자선택 :</label>
+      <select name="pizza">
+        <option>피자를 선택해주세요</option>
+      </select>
+      <br />
+      <fieldset>
+        <legend>피자 사이즈</legend>
+        <input type="radio" name="size" value="size" />Small <br /><br />
+        <input type="radio" name="size" value="size" />Medium <br /><br />
+        <input type="radio" name="size" value="size" />Large <br /><br />
+      </fieldset>
 
-      <label>고객명:</label>
-      <input type="text" name="clientName" /><br /><br />
-      <label>전화번호:</label>
-      <input type="text" name="clientPhone" /><br /><br />
-      <label>Email:</label>
-      <input type="text" name="clientEmail" /><br /><br />
-      <label>피자선택:</label>
-      <select name="pizza"></select>
+      <fieldset>
+        <legend>토핑 선택</legend>
+        <input type="checkbox" name="topping" value="topping" />베이컨
+        <br /><br />
+        <input type="checkbox" name="topping" value="topping" />치즈
+        <br /><br />
+        <input type="checkbox" name="topping" value="topping" />양파
+        <br /><br />
+        <input type="checkbox" name="topping" value="topping" />버섯
+        <br /><br />
+      </fieldset>
+
+      <br /><br />
+      <label>희망배송시간 :</label>
+      <input type="time" name="wishTime" />
+      <br /><br /><br /><br />
+      <input type="submit" value="주문하기" />
     </div>
   </body>
 </html>
