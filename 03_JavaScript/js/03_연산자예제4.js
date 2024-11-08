@@ -8,7 +8,11 @@ function 증가() {
 }
 
 function 초기화() {
-  document.getElementById("count").innerText = 0;
+  count = 0; //감소와 증가 버튼 모두 count를 0으로 만들기
+  document.getElementById("count").innerText = count;
+  //일시적으로 초기화 버튼을 눌렀을 때 잠깐만 0으로 숫자가 보이길 원한다면
+  //아래와 같이 설정
+  // document.getElementById("count").innerText = 0; 눈속임
 }
 
 function 감소() {
