@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #terms-form {
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h2,
+      h3 {
+        color: #ff8c00;
+        text-align: center;
+        font-weight: 600;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+        font-size: 14px;
+        color: #d2691e;
+      }
+      input[type="checkbox"] {
+        margin-right: 8px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: aliceblue;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ffa500;
+      }
+      #name-div {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #d2691e;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="terms-form">
+      <h2>회원가입 약관 및 취미 선택</h2>
+      <label>서비스 이용 약관 동의</label>
+      <input type="checkbox" id="필수1" />
+      <label>개인정보 수집 및 이용 동의</label>
+      <input type="checkbox" id="필수2" />
+      <label>마케팅 정보 수신 동의(선택)</label>
+      <input type="checkbox" id="선택" />
+      <h3>취미 선택</h3>
+      <label>독서</label>
+      <input type="checkbox" name="hobby" value="독서" />
+      <label>운동</label>
+      <input type="checkbox" name="hobby" value="운동" />
+      <label>요리</label>
+      <input type="checkbox" name="hobby" value="요리" />
+      <label>여행</label>
+      <input type="checkbox" name="hobby" value="여행" />
+      <button onclick="회원가이()">확인하기</button>
+      <div id="name-div"></div>
+    </form>
+    <script>
+      function 회원가이() {
+        const 필수1 = document.getElementById("필수1");
+        const 필수2 = document.getElementById("필수2");
+        const 선택 = document.getElementById("선택");
+        const hobbylist = document.getElementsByName("hobby");
+
+        if (필수1 || 필수2) {
+          alert("모든 필수 약관에 동의해주세요.");
+        }
+
+        let str = "";
+        let count = 0;
+
+        for (let i = 0; i < hobbylist.length; i++) {
+          if (hobbylist[i].checked) {
+            str += hobbylist[i].value + " ";
+            count++;
+          }
+        }
+        if (0 < count) {
+          document.getElementById(
+            "name-div"
+          ).innerHTML = `${str}<br>선택된 취미 개수 : ${count}`;
+        }
+      }
+    </script>
+  </body>
+</html>
