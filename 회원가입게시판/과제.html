@@ -79,13 +79,13 @@
       function 회원가이() {
         const 필수1 = document.getElementById("필수1");
         const 필수2 = document.getElementById("필수2");
-        const 선택 = document.getElementById("선택");
-        const hobbylist = document.getElementsByName("hobby");
 
-        if (필수1 || 필수2) {
+        if (!필수1 || !필수2) {
           alert("모든 필수 약관에 동의해주세요.");
+          return;
         }
 
+        const hobbylist = document.getElementsByName("hobby");
         let str = "";
         let count = 0;
 
