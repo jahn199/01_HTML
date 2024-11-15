@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>약관동의</title>
+    <link rel="stylesheet" href="../css/16_기본이벤트제거예제1.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>약관동의</h1>
+      <label
+        ><input type="checkbox" id="필수1" onclick="회원가입()" />필수약관 1
+        동의</label
+      >
+      <label
+        ><input type="checkbox" id="필수2" onclick="회원가입()" />필수약관 2
+        동의</label
+      >
+      <label
+        ><input type="checkbox" id="필수3" onclick="회원가입()" />필수약관 3
+        동의</label
+      >
+      <button id="signup">회원가입</button>
+    </div>
+    <script>
+      function 회원가입() {
+        const a1 = document.getElementById("필수1").checked;
+        const a2 = document.getElementById("필수2").checked;
+        const a3 = document.getElementById("필수3").checked;
+
+        const abc = a1 && a2 && a3;
+
+        document.getElementById("signup").disabled = !abc;
+      }
+    </script>
+  </body>
+</html>
